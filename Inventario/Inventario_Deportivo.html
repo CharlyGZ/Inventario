@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Usando highcharts </title>
+    <meta charset="utf-8" />
+	 
+     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	 <script src="https://code.highcharts.com/highcharts.js"></script>
+	 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+     
+</head>
+<body>
+    <!-- información clic -->
+    <!-- Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nike</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered"> 
+		<thead> <tr> 
+		       <th>#</th> 
+		       <th>Articulos Deportivos</th> 
+			   <th>Temporada</th> 
+			   <th>Cantidad de articulos vendidos</th>
+			   <th>Actualizacion de datos recabados</th> 
+			  </tr> </thead>
+		<tbody> 
+		<tr> 
+		     <th scope="row">1.-</th> 
+	  	     <td>Balones (Nike Pitch Team, Nike Strike, Nike Pitch Train, Pitch Training)</td> 
+			 <td>2019-2020</td> 
+			 <td>11,230</td>
+			 <td>Jue 11/06/2020 11:11</td> 
+		</tr> 
+		<tr> <th scope="row">2.-</th> 
+		     <td>Calcetas (Everyday Cushion, Performance Cushioned, Classic Nike, Everyday Plus)</td> 
+			 <td>2019-2020</td> 
+			 <td>7,500</td>
+			 <td>Jue 11/06/2020 11:15</td> 
+		</tr>
+		<tr> 
+			<th scope="row">3.-</th> 
+			<td>Tachones (Mercurial Superfly 7, Vapor Untouchable  3, Superfly 7)</td> 
+			<td>2019-2020</td> 
+			<td>10,200</td>
+			<td>Jue 11/06/2020 11:19</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">4.-</th> 
+			<td>Jerseys (Pumas de la UNAM 19/20, Barcelona 19, PSG 17/18, Seleccion de Francia Cup 18</td> 
+			<td>2019-2020</td> 
+			<td>11,110</td>
+			<td>Jue 11/06/2020 11:23</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">5.-</th> 
+			<td>Shorts (Nike Dry, Sportswear, Dri-FIT, Dry Academy)</td> 
+			<td>2019-2020</td> 
+			<td>8,250</td>
+			<td>Jue 11/06/2020 11:27</td> 
+		</tr> 
+		</tbody> </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Under Armour</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered"> 
+		<thead> <tr> 
+			     <th>#</th> 
+		       <th>Articulos Deportivos</th> 
+			   <th>Temporada</th> 
+			   <th>Cantidad de articulos vendidos</th>
+			   <th>Actualizacion de datos recabados</th> 
+			  </tr> </thead>
+		<tbody> 
+		<tr> 
+		     <th scope="row">1.-</th> 
+	  	     <td>Balones (Under Armour 595, UA 495, UA 695, UA Toluca 17/18)</td> 
+			 <td>2019-2020</td> 
+			 <td>1,105</td>
+			 <td>Jue 11/06/2020 11:40</td> 
+		</tr> 
+		<tr> <th scope="row">2.-</th> 
+		     <td>Calcetas (UA HeatGear, UA HeatGear Teech Low, UA Youth HeatGear, UA Drive)</td> 
+			 <td>2019-2020</td> 
+			 <td>750</td>
+			 <td>Jue 11/06/2020 11:44</td> 
+		</tr>
+		<tr> 
+			<th scope="row">3.-</th> 
+			<td>Tachones (UA Hammer Mid RM, UA Highlight, UA Magnetico Select FG)</td> 
+			<td>2019-2020</td> 
+			<td>10,200</td>
+			<td>Jue 11/06/2020 11:48</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">4.-</th> 
+			<td>Jerseys (UA Toluca 19/20, UA Cruz Azul 19/20, UA T-Shirt Black, UA Tottenham Hotspur 18/19</td> 
+			<td>2019-2020</td> 
+			<td>11,110</td>
+			<td>Jue 11/06/2020 11:52</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">5.-</th> 
+			<td>Shorts (UA Mirage 8 Negro, UA MK1, UA Launch SW 2-in-1, UA Fitness )</td> 
+			<td>2019-2020</td> 
+			<td>8,250</td>
+			<td>Jue 11/06/2020 11:56</td> 
+		</tr> 
+		</tbody> </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Addidas</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered"> 
+		<thead> <tr> 
+		       <th>#</th> 
+		       <th>Articulos Deportivos</th> 
+			   <th>Temporada</th> 
+			   <th>Cantidad de articulos vendidos</th>
+			   <th>Actualizacion de datos recabados</th> 
+			  </tr></thead>
+		<tbody> 
+		<tr> 
+		     <th scope="row">1.-</th> 
+	  	     <td>Balones (Adidas World Cup 18, Epp 2 Blanco, Tango Glider, Adidas FMF Mexico)</td> 
+			 <td>2019-2020</td> 
+			 <td>5,615</td>
+			 <td>Jue 11/06/2020 13:11</td> 
+		</tr> 
+		<tr> <th scope="row">2.-</th> 
+		     <td>Calcetas (Clasicos Solid, Low-cut 3, Super Blanco, Trebol Liner)</td> 
+			 <td>2019-2020</td> 
+			 <td>3,750</td>
+			 <td>Jue 11/06/2020 13:15</td> 
+		</tr>
+		<tr> 
+			<th scope="row">3.-</th> 
+			<td>Tachones (Nemeziz 18+ FG, Predator 19.3 FG, Copa 70)</td> 
+			<td>2019-2020</td> 
+			<td>5,100</td>
+			<td>Jue 11/06/2020 13:19</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">4.-</th> 
+			<td>Jerseys (Seleccion de Argentina Cup 2014, Seleccion de Mexico Cup 2018, Juventus FC 18/19, Manchester United Fc  19/20)</td> 
+			<td>2019-2020</td> 
+			<td>7,755</td>
+			<td>Jue 11/06/2020 13:23</td> 
+		</tr> 
+		<tr> 
+			<th scope="row">5.-</th> 
+			<td>Shorts (Linear Negro, Supernova Negro, Wiggle, Chino Shorts)</td> 
+			<td>2019-2020</td> 
+			<td>4,125</td>
+			<td>Jue 11/06/2020 13:27</td> 
+		</tr> 
+		</tbody> </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!-- -->
+    
+    
+   <div id="grafica" style="height: 400px"></div>
+    <script>
+     $(function () {
+    $('#grafica').highcharts({chart: {type: 'pie',options3d: {enabled: true,alpha: 45,beta: 0}},title: {text: 'Inventario Deportivo (Sport).'},
+        tooltip: {pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'},
+        plotOptions: {pie: {allowPointSelect: true,cursor: 'pointer',depth: 35,dataLabels: {enabled: true,format: '{point.name}'}}
+        },
+        series: [{type: 'pie',name: 'Ventas',
+        data: [
+               {id:1,name: 'Nike ',y: 45.0,events: {click: function (e) {MostrarInfo(this);}}},
+               {id:2,name: 'Addidas',y: 26.8,events: {click: function (e) {MostrarInfo(this);}}},
+               {id:3,name: 'Under Armour',y: 8.5,events: {click: function (e) {MostrarInfo(this);}}},
+			]
+        }]
+    });
+	
+       function MostrarInfo(Elemento){
+           
+            $('#modal'+Elemento.id).modal('show');
+           
+       }  
+         
+	
+});
+    </script>
+</body>
+</html>
